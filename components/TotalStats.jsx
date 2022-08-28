@@ -23,12 +23,15 @@ const TotalStats = () => {
   console.log(metadata);
 
   return (
-    <div className="text-white w-full h-[70px] flex items-center justify-between px-12 py-4 bg-black">
+    <div className="text-white w-full h-[100px] flex items-center opacity-80 rounded-2xl justify-between px-12 my-4 bg-[#1D191F]">
       {metadata?.map((stats) => {
         return (
-          <div key={stats.index} className="items-center justify-center">
-            <h1>{stats.label}</h1>
-            <h3>{stats.value}</h3>
+          <div
+            key={stats.index}
+            className="flex-row align-center justify-center tracking-widest"
+          >
+            <h1 className="font-extralight text-gray-300 ">{stats.label}</h1>
+            <h3 className="flex justify-center text-2xl">{stats.value}</h3>
           </div>
         );
       })}
