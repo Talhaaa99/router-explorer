@@ -26,6 +26,8 @@ const Transactions = () => {
             srcToken: stat.src_token_amount,
             srcSymbol: stat.srctokensymbol,
             status: stat.transaction_status,
+            srcHash: stat.execute_proposal_tx_hash,
+            destHash: stat.deposit_tx_hash,
           };
         })
       )
@@ -42,8 +44,8 @@ const Transactions = () => {
           <form className="w-[400px] focus:ring-0 focus:ring-offset-0">
             <input
               onChange={(e) => setSearchText(e.target.value)}
-              className="bg-gray-200 rounded-2xl shadow-xl w-full py-2 px-4 focus:ring-0 focus:ring-offset-0 "
-              type="text"
+              className="bg-gray-200 rounded-2xl shadow-xl w-full py-2 px-4 focus:ring-0 focus:ring-offset-0 text-gray-800"
+              type="search"
               placeholder="Enter an Address/ Txn Hash"
             />
           </form>
@@ -78,7 +80,7 @@ const Transactions = () => {
                   }
                 })
                 .map((item) => (
-                  <TableItem item={item} />
+                  <TableItem key={item.Date} item={item} />
                 ))}
             </tbody>
           </table>

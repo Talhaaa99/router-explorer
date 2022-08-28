@@ -39,8 +39,6 @@ const Charts = () => {
     });
   }, [chartData]);
 
-  console.log(chartData);
-
   const lineChartOne = (
     <Line
       data={{
